@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file contains iRazorIMU documentation -->
+<?xml-stylesheet href="../../../doc/xmldocumentation.css" type="text/css"?> 
+<xmldoc>
+   <moosapp>
+
+      <info>
+         <name>iRazorIMU</name>
+         <organization>Toutatis AUVs - ENSTA Bretagne</organization>
+         <date>2015</date>
+         <authors>
+            <author>Simon Rohou</author>
+         </authors>
+         <licence>MIT</licence>
+      </info>
+
+      <documentation>
+         <synopsis>
+           The iRazorIMU application is an interface to the Inertial Measurement Unit (Razhor, from Sparkfun). In the ACC_MAG_GYR_RAW or ACC_MAG_GYR_CALIBRATED modes, it publishes magnetic and inertial values such as linear accelerations, angular speeds and magnetic values. In the YAW_PITCH_ROLL mode, it will only publish yaw, pitch and roll values.
+         </synopsis>
+         <interface>
+            <subscriptions>
+            </subscriptions>
+            <publications>
+               <!-- if YAW_PITCH_ROLL MODE: -->
+               <moosvar>
+                  <varname>IMU_YAW</varname>
+                  <vartype>double</vartype>
+                  <varinfo>angle around Z axis</varinfo>
+               </moosvar>
+               <moosvar>
+                  <varname>IMU_PITCH</varname>
+                  <vartype>double</vartype>
+                  <varinfo>angle around Y axis</varinfo>
+               </moosvar>
+               <moosvar>
+                  <varname>IMU_ROLL</varname>
+                  <vartype>double</vartype>
+                  <varinfo>angle around X axis</varinfo>
+               </moosvar>
+               <!-- if ACC_MAG_GYR_{RAW|CALIBRATED} MODE: -->
+               <moosvar>
+                  <varname>IMU_ACC_X</varname>
+                  <vartype>double</vartype>
+                  <varinfo>acceleration along X axis</varinfo>
+               </moosvar>
+               <moosvar>
+                  <varname>IMU_ACC_Y</varname>
+                  <vartype>double</vartype>
+                  <varinfo>acceleration along Y axis</varinfo>
+               </moosvar>
+               <moosvar>
+                  <varname>IMU_ACC_Z</varname>
+                  <vartype>double</vartype>
+                  <varinfo>acceleration along Z axis</varinfo>
+               </moosvar>
+               <moosvar>
+                  <varname>IMU_MAG_X</varname>
+                  <vartype>double</vartype>
+                  <varinfo>magnetic value along X axis</varinfo>
+               </moosvar>
+               <moosvar>
+                  <varname>IMU_MAG_Y</varname>
+                  <vartype>double</vartype>
+                  <varinfo>magnetic value along Y axis</varinfo>
+               </moosvar>
+               <moosvar>
+                  <varname>IMU_MAG_Z</varname>
+                  <vartype>double</vartype>
+                  <varinfo>magnetic value along Z axis</varinfo>
+               </moosvar>
+               <moosvar>
+                  <varname>IMU_GYR_X</varname>
+                  <vartype>double</vartype>
+                  <varinfo>angular speed around X axis</varinfo>
+               </moosvar>
+               <moosvar>
+                  <varname>IMU_GYR_Y</varname>
+                  <vartype>double</vartype>
+                  <varinfo>angular speed around Y axis</varinfo>
+               </moosvar>
+               <moosvar>
+                  <varname>IMU_GYR_Z</varname>
+                  <vartype>double</vartype>
+                  <varinfo>angular speed around Z axis</varinfo>
+               </moosvar>
+            </publications>
+         </interface>
+         <!-- if there is a bug or a special fact to know.. -->
+         <optional-comments>
+            This application is based on the Peter Bartz's software, available on Github.
+         </optional-comments>
+         <!-- if something can be improved -->
+         <suggested-improvements>
+            No suggested improvements.
+         </suggested-improvements>
+      </documentation>
+
+   </moosapp>
+</xmldoc>
